@@ -50,12 +50,6 @@
     <Compile Include="controller\FrmConnexionController.cs" />
     <Compile Include="controller\FrmGestionController.cs" />
     <Compile Include="dal\GestDonneesBdd.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="model\Absence.cs" />
     <Compile Include="model\Motif.cs" />
     <Compile Include="model\Personnel.cs" />
@@ -101,6 +95,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\FormConfirmation.resx">
+      <DependentUpon>FormConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FormConnexion.resx">
+      <DependentUpon>FormConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FormErreur.resx">
+      <DependentUpon>FormErreur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FormGestionAbsence.resx">
+      <DependentUpon>FormGestionAbsence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FormGestionPersonnel.resx">
+      <DependentUpon>FormGestionPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

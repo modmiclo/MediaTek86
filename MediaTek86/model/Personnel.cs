@@ -1,6 +1,9 @@
 ﻿namespace MediaTek86.model
 {
-    class Personnel
+    /// <summary>
+    /// Classe métier interne pour mémoriser les informations du personnel
+    /// </summary>
+    public class Personnel
     {
         /// <summary>
         /// Valorise les propriétés

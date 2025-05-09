@@ -2,7 +2,10 @@
 
 namespace MediaTek86.model
 {
-    class Absence
+    /// <summary>
+    /// Classe métier interne pour mémoriser les informations d'absence
+    /// </summary>
+    public class Absence
     {
         /// <summary>
         /// Valorise les propriétés

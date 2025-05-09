@@ -1,6 +1,9 @@
 ﻿namespace MediaTek86.model
 {
-    class Motif
+    /// <summary>
+    /// Classe métier interne pour mémoriser les informations des motifs d'absence
+    /// </summary>
+    public class Motif
     {
         /// <summary>
         /// Valorise les propriétés

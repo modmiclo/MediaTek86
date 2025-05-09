@@ -2,7 +2,6 @@ C:\Users\mauda\Desktop\BTS1\ProjetsVS2022\MediaTek86\MediaTek86\obj\Debug\MediaT
 C:\Users\mauda\Desktop\BTS1\ProjetsVS2022\MediaTek86\MediaTek86\obj\Debug\MediaTek86.Properties.Resources.resources
 C:\Users\mauda\Desktop\BTS1\ProjetsVS2022\MediaTek86\MediaTek86\obj\Debug\MediaTek86.view.FormConfirmation.resources
 C:\Users\mauda\Desktop\BTS1\ProjetsVS2022\MediaTek86\MediaTek86\obj\Debug\MediaTek86.view.FormConnexion.resources
-C:\Users\mauda\Desktop\BTS1\ProjetsVS2022\MediaTek86\MediaTek86\obj\Debug\MediaTek86.view.FormErreur.resources
 C:\Users\mauda\Desktop\BTS1\ProjetsVS2022\MediaTek86\MediaTek86\obj\Debug\MediaTek86.view.FormGestionAbsence.resources
 C:\Users\mauda\Desktop\BTS1\ProjetsVS2022\MediaTek86\MediaTek86\obj\Debug\MediaTek86.view.FormGestionPersonnel.resources
 C:\Users\mauda\Desktop\BTS1\ProjetsVS2022\MediaTek86\MediaTek86\obj\Debug\MediaTek86.csproj.GenerateResource.cache

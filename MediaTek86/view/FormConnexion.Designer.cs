@@ -32,8 +32,8 @@ namespace MediaTek86.view
             this.btnSeConnecter = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.lblMdp = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtPwd = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnSeConnecter
@@ -44,7 +44,7 @@ namespace MediaTek86.view
             this.btnSeConnecter.TabIndex = 0;
             this.btnSeConnecter.Text = "Se connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
-            this.btnSeConnecter.Click += new System.EventHandler(this.button1_Click);
+            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // lblId
             // 
@@ -64,28 +64,28 @@ namespace MediaTek86.view
             this.lblMdp.TabIndex = 2;
             this.lblMdp.Text = "Mot de passe :";
             // 
-            // textBox1
+            // txtId
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtId.Location = new System.Drawing.Point(101, 21);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(179, 20);
+            this.txtId.TabIndex = 3;
             // 
-            // textBox2
+            // txtPwd
             // 
-            this.textBox2.Location = new System.Drawing.Point(101, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(179, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtPwd.Location = new System.Drawing.Point(101, 48);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
+            this.txtPwd.Size = new System.Drawing.Size(179, 20);
+            this.txtPwd.TabIndex = 4;
             // 
             // FormConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(306, 119);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPwd);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblMdp);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnSeConnecter);
@@ -101,7 +101,7 @@ namespace MediaTek86.view
         private System.Windows.Forms.Button btnSeConnecter;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblMdp;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtPwd;
     }
 }

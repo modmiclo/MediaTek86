@@ -103,9 +103,11 @@
     <Compile Include="controller\FrmConnexionController.cs" />
     <Compile Include="controller\FrmGestionController.cs" />
     <Compile Include="dal\Connexion.cs" />
+    <Compile Include="dal\ResponsableAccess.cs" />
     <Compile Include="model\Absence.cs" />
     <Compile Include="model\Motif.cs" />
     <Compile Include="model\Personnel.cs" />
+    <Compile Include="model\Responsable.cs" />
     <Compile Include="model\Service.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,12 +122,6 @@
     </Compile>
     <Compile Include="view\FormConnexion.Designer.cs">
       <DependentUpon>FormConnexion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="view\FormErreur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\FormErreur.Designer.cs">
-      <DependentUpon>FormErreur.cs</DependentUpon>
     </Compile>
     <Compile Include="view\FormGestionAbsence.cs">
       <SubType>Form</SubType>
@@ -153,9 +149,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\FormConnexion.resx">
       <DependentUpon>FormConnexion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="view\FormErreur.resx">
-      <DependentUpon>FormErreur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FormGestionAbsence.resx">
       <DependentUpon>FormGestionAbsence.cs</DependentUpon>

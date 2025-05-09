@@ -1,6 +1,9 @@
 ﻿namespace MediaTek86.model
 {
-    class Service
+    /// <summary>
+    /// Classe métier interne pour mémoriser les informations sur les services présentés dans le contexte
+    /// </summary>
+    public class Service
     {
         /// <summary>
         /// Valorise les propriétés

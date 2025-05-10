@@ -97,6 +97,12 @@
             </summary>
             <param name="personnel">objet developpeur à modifier</param>
         </member>
+        <member name="M:MediaTek86.controller.FrmGestionController.DelPersonnel(MediaTek86.model.Personnel)">
+            <summary>
+            Demande de suppression d'un personnel
+            </summary>
+            <param name="personnel">objet personnel à supprimer</param>
+        </member>
         <member name="T:MediaTek86.dal.Connexion">
             <summary>
             Singleton : classe d'accès à BddManager
@@ -175,6 +181,12 @@
             Demande de modification d'un développeur
             </summary>
             <param name="personnel">objet personnel à modifier</param>
+        </member>
+        <member name="M:MediaTek86.dal.ResponsableAccess.DelPersonnel(MediaTek86.model.Personnel)">
+            <summary>
+            Demande de suppression d'un personnel
+            </summary>
+            <param name="personnel">objet personnel à supprimer</param>
         </member>
         <member name="T:MediaTek86.model.Absence">
             <summary>
@@ -389,6 +401,21 @@
         <member name="M:MediaTek86.view.FormGestionPersonnel.btnEnregistrer_Click(System.Object,System.EventArgs)">
             <summary>
             Demande d'enregistrement de l'ajout ou de la modification d'un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionPersonnel.btnAnnuler_Click(System.Object,System.EventArgs)">
+            <summary>
+            Annule la demande d'ajout ou de modification d'un personnel
+            Vide les zones de saisie du personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionPersonnel.btnSuppr_Click(System.Object,System.EventArgs)">
+            <summary>
+            Demande de suppression d'un personnel
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

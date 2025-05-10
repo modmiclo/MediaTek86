@@ -59,6 +59,7 @@ namespace MediaTek86.view
             List<Personnel> lePersonnel = controller.GetLePersonnel();
             bdgPersonnel.DataSource = lePersonnel;
             dgvPersonnel.DataSource = bdgPersonnel;
+            dgvPersonnel.Columns["idpersonnel"].Visible = false;
             dgvPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -152,6 +153,42 @@ namespace MediaTek86.view
                 MessageBox.Show("Tous les champs doivent être remplis.", "Information");
             }
 
+        }
+
+        /// <summary>
+        /// Annule la demande d'ajout ou de modification d'un personnel
+        /// Vide les zones de saisie du personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                EnCoursDeModifPersonnel(false);
+            }
+        }
+
+        /// <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSuppr_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
+                if (MessageBox.Show("Voulez-vous vraiment supprimer " + personnel.Nom + " " + personnel.Prenom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    controller.DelPersonnel(personnel);
+                    RemplirListePersonnel();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
         }
     }
 }

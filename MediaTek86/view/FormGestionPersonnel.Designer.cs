@@ -84,6 +84,7 @@ namespace MediaTek86.view
             this.btnSuppr.TabIndex = 3;
             this.btnSuppr.Text = "Supprimer";
             this.btnSuppr.UseVisualStyleBackColor = true;
+            this.btnSuppr.Click += new System.EventHandler(this.btnSuppr_Click);
             // 
             // btnGestAbsence
             // 
@@ -144,6 +145,7 @@ namespace MediaTek86.view
             this.btnAnnuler.TabIndex = 11;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnEnregistrer
             // 

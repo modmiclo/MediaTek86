@@ -64,6 +64,27 @@
             <param name="responsable">objet contenant les informations de connexion</param>
             <returns> vrai si les informations de connexion sont correctes</returns>
         </member>
+        <member name="T:MediaTek86.controller.FrmGestionController">
+            <summary>
+            Contrôleur de FrmGestionAbsence et FrmGestionPersonnel
+            </summary>
+        </member>
+        <member name="F:MediaTek86.controller.FrmGestionController.responsableAccess">
+            <summary>
+            objet d'accès aux opérations possibles sur le personnel
+            </summary>
+        </member>
+        <member name="M:MediaTek86.controller.FrmGestionController.#ctor">
+            <summary>
+            Récupère les acces aux données
+            </summary>
+        </member>
+        <member name="M:MediaTek86.controller.FrmGestionController.GetLePersonnel">
+            <summary>
+            Récupère et retourne les infos du personnel
+            </summary>
+            <returns>liste des développeurs</returns>
+        </member>
         <member name="T:MediaTek86.dal.Connexion">
             <summary>
             Singleton : classe d'accès à BddManager
@@ -98,7 +119,7 @@
         </member>
         <member name="T:MediaTek86.dal.ResponsableAccess">
             <summary>
-            Classe permettant de gérer les demandes concernant les developpeurs
+            Classe permettant de gérer les demandes concernant les responsables
             </summary>
         </member>
         <member name="F:MediaTek86.dal.ResponsableAccess.connexion">
@@ -118,6 +139,12 @@
             <param name="login"></param>
             <param name="pwd"></param>
             <returns>vrai si l'utilisateur a le profil "admin"</returns>
+        </member>
+        <member name="M:MediaTek86.dal.ResponsableAccess.GetLePersonnel">
+            <summary>
+            Récupère et retourne le personnel
+            </summary>
+            <returns>liste du personnel</returns>
         </member>
         <member name="T:MediaTek86.model.Absence">
             <summary>
@@ -184,6 +211,12 @@
             </summary>
             <param name="idService"></param>
             <param name="nom"></param>
+        </member>
+        <member name="M:MediaTek86.model.Service.ToString">
+            <summary>
+            Définit l'information à afficher (juste le nom)
+            </summary>
+            <returns>nom du service</returns>
         </member>
         <member name="M:MediaTek86.Program.Main">
             <summary>
@@ -267,6 +300,32 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MediaTek86.view.FormGestionPersonnel.controller">
+            <summary>
+            Controleur de la fenêtre
+            </summary>
+        </member>
+        <member name="F:MediaTek86.view.FormGestionPersonnel.bdgPersonnel">
+            <summary>
+            Objet pour gérer la liste du personnel
+            </summary>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionPersonnel.#ctor">
+            <summary>
+            construction des composants graphiques et appel des autres initialisations
+            </summary>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionPersonnel.Init">
+            <summary>
+            Initialisations :
+            Création du controleur et remplissage des listes
+            </summary>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionPersonnel.RemplirListePersonnel">
+            <summary>
+            Affiche le personnel
             </summary>
         </member>
         <member name="F:MediaTek86.view.FormGestionPersonnel.components">

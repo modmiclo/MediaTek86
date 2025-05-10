@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MediaTek86.dal
 {
     /// <summary>
-    /// Classe permettant de gérer les demandes concernant les developpeurs
+    /// Classe permettant de gérer les demandes concernant les responsables
     /// </summary>
     public class ResponsableAccess
         {
@@ -56,5 +57,43 @@ namespace MediaTek86.dal
                 }
                 return false;
             }
+
+        /// <summary>
+        /// Récupère et retourne le personnel
+        /// </summary>
+        /// <returns>liste du personnel</returns>
+        public List<Personnel> GetLePersonnel()
+        {
+            List<Personnel> lePersonnel= new List<Personnel>();
+            if (connexion.Manager != null)
+            {
+                string req = "select p.idpersonnel, p.nom, p.prenom, p.tel, p.mail, s.idservice, s.nom ";
+                req += "from personnel p join service s on p.idservice = s.idservice ";
+                req += "order by p.nom, p.prenom;";
+                try
+                {
+                    List<Object[]> records = connexion.Manager.ReqSelect(req);
+                    Console.WriteLine(records.Count > 0);
+                    if (records != null)
+                    {
+                        foreach (Object[] record in records)
+                        {
+                            Service service = new Service((int)record[5], (string)record[6]);
+                            Personnel personnel = new Personnel(
+                                (int)record[0], (string)record[1], (string)record[2],
+                                (string)record[3], (string)record[4], service
+                            );
+                            lePersonnel.Add(personnel);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+            return lePersonnel;
         }
+    }
 }

@@ -30,24 +30,24 @@ namespace MediaTek86.view
         private void InitializeComponent()
         {
             this.grpBoxPersonnel = new System.Windows.Forms.GroupBox();
-            this.dgvPersonnel = new System.Windows.Forms.DataGridView();
-            this.btnModifier = new System.Windows.Forms.Button();
-            this.btnGestAbsence = new System.Windows.Forms.Button();
-            this.btnSuppr = new System.Windows.Forms.Button();
             this.btnAddPersonnel = new System.Windows.Forms.Button();
+            this.btnSuppr = new System.Windows.Forms.Button();
+            this.btnGestAbsence = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.dgvPersonnel = new System.Windows.Forms.DataGridView();
             this.grpBoxAddModPersonnel = new System.Windows.Forms.GroupBox();
-            this.lblPrenom = new System.Windows.Forms.Label();
-            this.lblNom = new System.Windows.Forms.Label();
-            this.lblMail = new System.Windows.Forms.Label();
-            this.lblTel = new System.Windows.Forms.Label();
-            this.lblService = new System.Windows.Forms.Label();
-            this.cmbBoxService = new System.Windows.Forms.ComboBox();
+            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
             this.txtBoxMail = new System.Windows.Forms.TextBox();
+            this.txtBoxTel = new System.Windows.Forms.TextBox();
             this.txtBoxPrenom = new System.Windows.Forms.TextBox();
             this.txtBoxNom = new System.Windows.Forms.TextBox();
-            this.txtBoxTel = new System.Windows.Forms.TextBox();
-            this.btnEnregistrer = new System.Windows.Forms.Button();
-            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.cmbBoxService = new System.Windows.Forms.ComboBox();
+            this.lblService = new System.Windows.Forms.Label();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.lblNom = new System.Windows.Forms.Label();
+            this.lblPrenom = new System.Windows.Forms.Label();
             this.grpBoxPersonnel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).BeginInit();
             this.grpBoxAddModPersonnel.SuspendLayout();
@@ -67,31 +67,14 @@ namespace MediaTek86.view
             this.grpBoxPersonnel.TabStop = false;
             this.grpBoxPersonnel.Text = "Personnel";
             // 
-            // dgvPersonnel
+            // btnAddPersonnel
             // 
-            this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonnel.Location = new System.Drawing.Point(6, 19);
-            this.dgvPersonnel.Name = "dgvPersonnel";
-            this.dgvPersonnel.Size = new System.Drawing.Size(769, 150);
-            this.dgvPersonnel.TabIndex = 0;
-            // 
-            // btnModifier
-            // 
-            this.btnModifier.Location = new System.Drawing.Point(6, 175);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(127, 23);
-            this.btnModifier.TabIndex = 1;
-            this.btnModifier.Text = "Modifier";
-            this.btnModifier.UseVisualStyleBackColor = true;
-            // 
-            // btnGestAbsence
-            // 
-            this.btnGestAbsence.Location = new System.Drawing.Point(139, 175);
-            this.btnGestAbsence.Name = "btnGestAbsence";
-            this.btnGestAbsence.Size = new System.Drawing.Size(127, 23);
-            this.btnGestAbsence.TabIndex = 2;
-            this.btnGestAbsence.Text = "Gestion absence";
-            this.btnGestAbsence.UseVisualStyleBackColor = true;
+            this.btnAddPersonnel.Location = new System.Drawing.Point(648, 175);
+            this.btnAddPersonnel.Name = "btnAddPersonnel";
+            this.btnAddPersonnel.Size = new System.Drawing.Size(127, 23);
+            this.btnAddPersonnel.TabIndex = 4;
+            this.btnAddPersonnel.Text = "Ajouter un personnel";
+            this.btnAddPersonnel.UseVisualStyleBackColor = true;
             // 
             // btnSuppr
             // 
@@ -102,14 +85,34 @@ namespace MediaTek86.view
             this.btnSuppr.Text = "Supprimer";
             this.btnSuppr.UseVisualStyleBackColor = true;
             // 
-            // btnAddPersonnel
+            // btnGestAbsence
             // 
-            this.btnAddPersonnel.Location = new System.Drawing.Point(648, 175);
-            this.btnAddPersonnel.Name = "btnAddPersonnel";
-            this.btnAddPersonnel.Size = new System.Drawing.Size(127, 23);
-            this.btnAddPersonnel.TabIndex = 4;
-            this.btnAddPersonnel.Text = "Ajouter un personnel";
-            this.btnAddPersonnel.UseVisualStyleBackColor = true;
+            this.btnGestAbsence.Location = new System.Drawing.Point(139, 175);
+            this.btnGestAbsence.Name = "btnGestAbsence";
+            this.btnGestAbsence.Size = new System.Drawing.Size(127, 23);
+            this.btnGestAbsence.TabIndex = 2;
+            this.btnGestAbsence.Text = "Gestion absence";
+            this.btnGestAbsence.UseVisualStyleBackColor = true;
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Location = new System.Drawing.Point(6, 175);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(127, 23);
+            this.btnModifier.TabIndex = 1;
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            // 
+            // dgvPersonnel
+            // 
+            this.dgvPersonnel.AllowUserToAddRows = false;
+            this.dgvPersonnel.AllowUserToDeleteRows = false;
+            this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersonnel.Location = new System.Drawing.Point(6, 19);
+            this.dgvPersonnel.Name = "dgvPersonnel";
+            this.dgvPersonnel.ReadOnly = true;
+            this.dgvPersonnel.Size = new System.Drawing.Size(769, 150);
+            this.dgvPersonnel.TabIndex = 0;
             // 
             // grpBoxAddModPersonnel
             // 
@@ -132,58 +135,23 @@ namespace MediaTek86.view
             this.grpBoxAddModPersonnel.TabStop = false;
             this.grpBoxAddModPersonnel.Text = "Ajouter et modifier un personnel";
             // 
-            // lblPrenom
+            // btnAnnuler
             // 
-            this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Location = new System.Drawing.Point(6, 85);
-            this.lblPrenom.Name = "lblPrenom";
-            this.lblPrenom.Size = new System.Drawing.Size(49, 13);
-            this.lblPrenom.TabIndex = 0;
-            this.lblPrenom.Text = "Prenom :";
+            this.btnAnnuler.Location = new System.Drawing.Point(139, 132);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(127, 23);
+            this.btnAnnuler.TabIndex = 11;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // lblNom
+            // btnEnregistrer
             // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(20, 38);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(35, 13);
-            this.lblNom.TabIndex = 1;
-            this.lblNom.Text = "Nom :";
-            // 
-            // lblMail
-            // 
-            this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(305, 85);
-            this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(32, 13);
-            this.lblMail.TabIndex = 2;
-            this.lblMail.Text = "Mail :";
-            // 
-            // lblTel
-            // 
-            this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(309, 38);
-            this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(28, 13);
-            this.lblTel.TabIndex = 3;
-            this.lblTel.Text = "Tel :";
-            // 
-            // lblService
-            // 
-            this.lblService.AutoSize = true;
-            this.lblService.Location = new System.Drawing.Point(669, 35);
-            this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(49, 13);
-            this.lblService.TabIndex = 4;
-            this.lblService.Text = "Service :";
-            // 
-            // cmbBoxService
-            // 
-            this.cmbBoxService.FormattingEnabled = true;
-            this.cmbBoxService.Location = new System.Drawing.Point(604, 81);
-            this.cmbBoxService.Name = "cmbBoxService";
-            this.cmbBoxService.Size = new System.Drawing.Size(171, 21);
-            this.cmbBoxService.TabIndex = 5;
+            this.btnEnregistrer.Location = new System.Drawing.Point(6, 132);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(127, 23);
+            this.btnEnregistrer.TabIndex = 10;
+            this.btnEnregistrer.Text = "Enregistrer";
+            this.btnEnregistrer.UseVisualStyleBackColor = true;
             // 
             // txtBoxMail
             // 
@@ -191,6 +159,13 @@ namespace MediaTek86.view
             this.txtBoxMail.Name = "txtBoxMail";
             this.txtBoxMail.Size = new System.Drawing.Size(171, 20);
             this.txtBoxMail.TabIndex = 6;
+            // 
+            // txtBoxTel
+            // 
+            this.txtBoxTel.Location = new System.Drawing.Point(343, 35);
+            this.txtBoxTel.Name = "txtBoxTel";
+            this.txtBoxTel.Size = new System.Drawing.Size(171, 20);
+            this.txtBoxTel.TabIndex = 9;
             // 
             // txtBoxPrenom
             // 
@@ -206,30 +181,58 @@ namespace MediaTek86.view
             this.txtBoxNom.Size = new System.Drawing.Size(171, 20);
             this.txtBoxNom.TabIndex = 8;
             // 
-            // txtBoxTel
+            // cmbBoxService
             // 
-            this.txtBoxTel.Location = new System.Drawing.Point(343, 35);
-            this.txtBoxTel.Name = "txtBoxTel";
-            this.txtBoxTel.Size = new System.Drawing.Size(171, 20);
-            this.txtBoxTel.TabIndex = 9;
+            this.cmbBoxService.FormattingEnabled = true;
+            this.cmbBoxService.Location = new System.Drawing.Point(604, 81);
+            this.cmbBoxService.Name = "cmbBoxService";
+            this.cmbBoxService.Size = new System.Drawing.Size(171, 21);
+            this.cmbBoxService.TabIndex = 5;
             // 
-            // btnEnregistrer
+            // lblService
             // 
-            this.btnEnregistrer.Location = new System.Drawing.Point(6, 132);
-            this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(127, 23);
-            this.btnEnregistrer.TabIndex = 10;
-            this.btnEnregistrer.Text = "Enregistrer";
-            this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.lblService.AutoSize = true;
+            this.lblService.Location = new System.Drawing.Point(669, 35);
+            this.lblService.Name = "lblService";
+            this.lblService.Size = new System.Drawing.Size(49, 13);
+            this.lblService.TabIndex = 4;
+            this.lblService.Text = "Service :";
             // 
-            // btnAnnuler
+            // lblTel
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(139, 132);
-            this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(127, 23);
-            this.btnAnnuler.TabIndex = 11;
-            this.btnAnnuler.Text = "Annuler";
-            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.lblTel.AutoSize = true;
+            this.lblTel.Location = new System.Drawing.Point(309, 38);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(28, 13);
+            this.lblTel.TabIndex = 3;
+            this.lblTel.Text = "Tel :";
+            // 
+            // lblMail
+            // 
+            this.lblMail.AutoSize = true;
+            this.lblMail.Location = new System.Drawing.Point(305, 85);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(32, 13);
+            this.lblMail.TabIndex = 2;
+            this.lblMail.Text = "Mail :";
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.Location = new System.Drawing.Point(20, 38);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(35, 13);
+            this.lblNom.TabIndex = 1;
+            this.lblNom.Text = "Nom :";
+            // 
+            // lblPrenom
+            // 
+            this.lblPrenom.AutoSize = true;
+            this.lblPrenom.Location = new System.Drawing.Point(6, 85);
+            this.lblPrenom.Name = "lblPrenom";
+            this.lblPrenom.Size = new System.Drawing.Size(49, 13);
+            this.lblPrenom.TabIndex = 0;
+            this.lblPrenom.Text = "Prenom :";
             // 
             // FormGestionPersonnel
             // 

@@ -102,6 +102,7 @@ namespace MediaTek86.view
             this.btnModifier.TabIndex = 1;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // dgvPersonnel
             // 
@@ -152,6 +153,7 @@ namespace MediaTek86.view
             this.btnEnregistrer.TabIndex = 10;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // txtBoxMail
             // 

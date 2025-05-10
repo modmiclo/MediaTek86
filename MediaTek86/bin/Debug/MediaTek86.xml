@@ -85,6 +85,18 @@
             </summary>
             <returns>liste des développeurs</returns>
         </member>
+        <member name="M:MediaTek86.controller.FrmGestionController.AddPersonnel(MediaTek86.model.Personnel)">
+            <summary>
+            Demande d'ajout d'un personnel
+            </summary>
+            <param name="personnel">objet developpeur à ajouter</param>
+        </member>
+        <member name="M:MediaTek86.controller.FrmGestionController.UpdatePersonnel(MediaTek86.model.Personnel)">
+            <summary>
+            Demande de modification d'un personnel
+            </summary>
+            <param name="personnel">objet developpeur à modifier</param>
+        </member>
         <member name="T:MediaTek86.dal.Connexion">
             <summary>
             Singleton : classe d'accès à BddManager
@@ -145,6 +157,24 @@
             Récupère et retourne le personnel
             </summary>
             <returns>liste du personnel</returns>
+        </member>
+        <member name="M:MediaTek86.dal.ResponsableAccess.GetLesServices">
+            <summary>
+            Récupère et retourne les services
+            </summary>
+            <returns>liste des services</returns>
+        </member>
+        <member name="M:MediaTek86.dal.ResponsableAccess.AddPersonnel(MediaTek86.model.Personnel)">
+            <summary>
+            Demande d'ajout un développeur
+            </summary>
+            <param name="personnel">objet personnel à ajouter</param>
+        </member>
+        <member name="M:MediaTek86.dal.ResponsableAccess.UpdatePersonnel(MediaTek86.model.Personnel)">
+            <summary>
+            Demande de modification d'un développeur
+            </summary>
+            <param name="personnel">objet personnel à modifier</param>
         </member>
         <member name="T:MediaTek86.model.Absence">
             <summary>
@@ -312,6 +342,16 @@
             Objet pour gérer la liste du personnel
             </summary>
         </member>
+        <member name="F:MediaTek86.view.FormGestionPersonnel.bdgServices">
+            <summary>
+            Objet pour gérer la liste des services
+            </summary>
+        </member>
+        <member name="F:MediaTek86.view.FormGestionPersonnel.enCoursDeModifPersonnel">
+            <summary>
+            Booléen pour savoir si une modification est demandée
+            </summary>
+        </member>
         <member name="M:MediaTek86.view.FormGestionPersonnel.#ctor">
             <summary>
             construction des composants graphiques et appel des autres initialisations
@@ -327,6 +367,31 @@
             <summary>
             Affiche le personnel
             </summary>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionPersonnel.RemplirListeService">
+            <summary>
+            Affiche les services
+            </summary>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionPersonnel.btnModifier_Click(System.Object,System.EventArgs)">
+            <summary>
+             Demande de modification d'un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionPersonnel.EnCoursDeModifPersonnel(System.Boolean)">
+            <summary>
+            Modification d'affichage suivant si on est en cours de modif ou d'ajout d'un personnel
+            </summary>
+            <param name="modif"></param>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionPersonnel.btnEnregistrer_Click(System.Object,System.EventArgs)">
+            <summary>
+            Demande d'enregistrement de l'ajout ou de la modification d'un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="F:MediaTek86.view.FormGestionPersonnel.components">
             <summary>

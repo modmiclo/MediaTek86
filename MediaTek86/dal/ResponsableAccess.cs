@@ -95,5 +95,93 @@ namespace MediaTek86.dal
             }
             return lePersonnel;
         }
+
+        /// <summary>
+        /// Récupère et retourne les services
+        /// </summary>
+        /// <returns>liste des services</returns>
+        public List<Service> GetLesServices()
+        {
+            List<Service> lesServices = new List<Service>();
+            if (connexion.Manager != null)
+            {
+                string req = "select * from service order by nom;";
+                try
+                {
+                    List<Object[]> records = connexion.Manager.ReqSelect(req);
+                    if (records != null)
+                    {
+                        foreach (Object[] record in records)
+                        {
+                            Service service = new Service((int)record[0], (string)record[1]);
+                            lesServices.Add(service);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+            return lesServices;
+        }
+
+        /// <summary>
+        /// Demande d'ajout un développeur
+        /// </summary>
+        /// <param name="personnel">objet personnel à ajouter</param>
+        public void AddPersonnel(Personnel personnel)
+        {
+            if (connexion.Manager != null)
+            {
+                string req = "insert into personnel(nom, prenom, tel, mail, idservice) ";
+                req += "values (@nom, @prenom, @tel, @mail, @idservice);";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@nom", personnel.Nom);
+                parameters.Add("@prenom", personnel.Prenom);
+                parameters.Add("@tel", personnel.Tel);
+                parameters.Add("@mail", personnel.Mail);
+                parameters.Add("@idservice", personnel.Service.IdService);
+                try
+                {
+                    connexion.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Demande de modification d'un développeur
+        /// </summary>
+        /// <param name="personnel">objet personnel à modifier</param>
+        public void UpdatePersonnel(Personnel personnel)
+        {
+            if (connexion.Manager != null)
+            {
+                string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
+                req += "where idpersonnel = @idpersonnel;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@idPersonnel", personnel.IdPersonnel);
+                parameters.Add("@nom", personnel.Nom);
+                parameters.Add("@prenom", personnel.Prenom);
+                parameters.Add("@tel", personnel.Tel);
+                parameters.Add("@mail", personnel.Mail);
+                parameters.Add("@idservice", personnel.Service.IdService);
+                try
+                {
+                    connexion.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace MediaTek86.view
         /// <summary>
         /// Controleur de la fenêtre
         /// </summary>
-        private FrmGestionController controller;
+        private FrmGestionPersonnelController controller;
         /// <summary>
         /// Objet pour gérer la liste du personnel
         /// </summary>
@@ -45,7 +45,7 @@ namespace MediaTek86.view
         /// </summary>
         private void Init()
         {
-            controller = new FrmGestionController();
+            controller = new FrmGestionPersonnelController();
             RemplirListePersonnel();
             RemplirListeService();
         }
@@ -184,6 +184,28 @@ namespace MediaTek86.view
                     controller.DelPersonnel(personnel);
                     RemplirListePersonnel();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
+
+
+        /// <summary>
+        /// Demande au controleur d'ouvrir le formulaire d'absence du personnel sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGestAbsence_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                int indexLigne = dgvPersonnel.SelectedRows[0].Index;
+                int idPersonnel = Convert.ToInt32(dgvPersonnel.Rows[indexLigne].Cells["idpersonnel"].Value);
+
+                FormGestionAbsence frm = new FormGestionAbsence(idPersonnel);
+                frm.ShowDialog();
             }
             else
             {

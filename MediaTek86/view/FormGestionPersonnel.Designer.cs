@@ -94,6 +94,7 @@ namespace MediaTek86.view
             this.btnGestAbsence.TabIndex = 2;
             this.btnGestAbsence.Text = "Gestion absence";
             this.btnGestAbsence.UseVisualStyleBackColor = true;
+            this.btnGestAbsence.Click += new System.EventHandler(this.btnGestAbsence_Click);
             // 
             // btnModifier
             // 

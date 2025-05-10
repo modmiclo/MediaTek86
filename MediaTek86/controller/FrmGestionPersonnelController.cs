@@ -11,20 +11,26 @@ namespace MediaTek86.controller
     /// <summary>
     /// Contrôleur de FrmGestionAbsence et FrmGestionPersonnel
     /// </summary>
-    public class FrmGestionController
+    public class FrmGestionPersonnelController
     {
         /// <summary>
         /// objet d'accès aux opérations possibles sur le personnel
         /// </summary>
-        private readonly ResponsableAccess responsableAccess;
+        private readonly PersonnelAccess personnelAccess;
+
+        /// <summary>
+        /// objet d'accès aux opérations possibles sur les services
+        /// </summary>
+        private readonly ServiceAccess servicesAccess;
 
 
         /// <summary>
         /// Récupère les acces aux données
         /// </summary>
-        public FrmGestionController()
+        public FrmGestionPersonnelController()
         {
-            responsableAccess = new ResponsableAccess();
+            personnelAccess = new PersonnelAccess();
+            servicesAccess = new ServiceAccess();
         }
 
         /// <summary>
@@ -33,12 +39,12 @@ namespace MediaTek86.controller
         /// <returns>liste des développeurs</returns>
         public List<Personnel> GetLePersonnel()
         {
-            return responsableAccess.GetLePersonnel();
+            return personnelAccess.GetLePersonnel();
         }
 
         public List<Service> GetLesServices()
         {
-            return responsableAccess.GetLesServices();
+            return servicesAccess.GetLesServices();
         }
 
         /// <summary>
@@ -47,7 +53,7 @@ namespace MediaTek86.controller
         /// <param name="personnel">objet developpeur à ajouter</param>
         public void AddPersonnel(Personnel personnel)
         {
-            responsableAccess.AddPersonnel(personnel);
+            personnelAccess.AddPersonnel(personnel);
         }
 
         /// <summary>
@@ -56,7 +62,7 @@ namespace MediaTek86.controller
         /// <param name="personnel">objet developpeur à modifier</param>
         public void UpdatePersonnel(Personnel personnel)
         {
-            responsableAccess.UpdatePersonnel(personnel);
+            personnelAccess.UpdatePersonnel(personnel);
         }
 
         /// <summary>
@@ -65,7 +71,7 @@ namespace MediaTek86.controller
         /// <param name="personnel">objet personnel à supprimer</param>
         public void DelPersonnel(Personnel personnel)
         {
-            responsableAccess.DelPersonnel(personnel);
+            personnelAccess.DelPersonnel(personnel);
         }
 
     }

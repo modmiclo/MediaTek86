@@ -101,9 +101,14 @@
   <ItemGroup>
     <Compile Include="bddmanager\BddManager.cs" />
     <Compile Include="controller\FrmConnexionController.cs" />
-    <Compile Include="controller\FrmGestionController.cs" />
+    <Compile Include="controller\FrmGestionAbsenceController.cs" />
+    <Compile Include="controller\FrmGestionPersonnelController.cs" />
+    <Compile Include="dal\AbsenceAccess.cs" />
     <Compile Include="dal\Connexion.cs" />
+    <Compile Include="dal\MotifAccess.cs" />
+    <Compile Include="dal\PersonnelAccess.cs" />
     <Compile Include="dal\ResponsableAccess.cs" />
+    <Compile Include="dal\ServiceAccess.cs" />
     <Compile Include="model\Absence.cs" />
     <Compile Include="model\Motif.cs" />
     <Compile Include="model\Personnel.cs" />
@@ -111,12 +116,6 @@
     <Compile Include="model\Service.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="view\FormConfirmation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\FormConfirmation.Designer.cs">
-      <DependentUpon>FormConfirmation.cs</DependentUpon>
-    </Compile>
     <Compile Include="view\FormConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,9 +143,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\FormConfirmation.resx">
-      <DependentUpon>FormConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="view\FormConnexion.resx">
       <DependentUpon>FormConnexion.cs</DependentUpon>
     </EmbeddedResource>

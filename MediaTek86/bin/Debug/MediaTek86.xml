@@ -91,6 +91,19 @@
             </summary>
             <returns>liste des absences </returns>
         </member>
+        <member name="M:MediaTek86.controller.FrmGestionAbsenceController.AddAbsence(MediaTek86.model.Absence)">
+            <summary>
+            Demande d'ajout d'une absence
+            </summary>
+            <param name="absence">objet absence à ajouter</param>
+        </member>
+        <member name="M:MediaTek86.controller.FrmGestionAbsenceController.UpdateAbsence(MediaTek86.model.Absence,System.DateTime)">
+            <summary>
+            Demande de modification d'une absence
+            </summary>
+            <param name="absence">objet absence à modifier</param>
+            <param name="ancienneDate">l'ancienne date de l'absence</param>
+        </member>
         <member name="T:MediaTek86.controller.FrmGestionPersonnelController">
             <summary>
             Contrôleur de FrmGestionAbsence et FrmGestionPersonnel
@@ -155,6 +168,19 @@
             Récupère et retourne les absences
             </summary>
             <returns>liste des absences</returns>
+        </member>
+        <member name="M:MediaTek86.dal.AbsenceAccess.AddAbsence(MediaTek86.model.Absence)">
+            <summary>
+            Demande d'ajout d'une absence
+            </summary>
+            <param name="absence">objet absence à ajouter</param>
+        </member>
+        <member name="M:MediaTek86.dal.AbsenceAccess.UpdateAbsence(MediaTek86.model.Absence,System.DateTime)">
+            <summary>
+            Demande de modification d'une absence
+            </summary>
+            <param name="absence">objet absence à modifier</param>
+            <param name="ancienneDate">l'ancienne date de l'absence</param>
         </member>
         <member name="T:MediaTek86.dal.Connexion">
             <summary>
@@ -430,6 +456,16 @@
             Objet pour gérer la liste des absences
             </summary>
         </member>
+        <member name="F:MediaTek86.view.FormGestionAbsence.enCoursDeModifAbsence">
+            <summary>
+            Booléen pour savoir si une modification est demandée
+            </summary>
+        </member>
+        <member name="F:MediaTek86.view.FormGestionAbsence.idpersonnel">
+            <summary>
+            Identifiant du personnel courant
+            </summary>
+        </member>
         <member name="F:MediaTek86.view.FormGestionAbsence.controller">
             <summary>
             Controleur de la fenêtre
@@ -440,7 +476,7 @@
             construction des composants graphiques et appel des autres initialisations
             </summary>
         </member>
-        <member name="M:MediaTek86.view.FormGestionAbsence.Init(System.Int32)">
+        <member name="M:MediaTek86.view.FormGestionAbsence.Init">
             <summary>
             Initialisations :
             Création du controleur et remplissage des listes
@@ -451,10 +487,38 @@
             Affiche les motifs
             </summary>
         </member>
-        <member name="M:MediaTek86.view.FormGestionAbsence.RemplirListeAbsence(System.Int32)">
+        <member name="M:MediaTek86.view.FormGestionAbsence.RemplirListeAbsence">
             <summary>
             Affiche les absences
             </summary>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionAbsence.btnModifier_Click(System.Object,System.EventArgs)">
+            <summary>
+             Demande de modification d'un absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionAbsence.EnCoursDeModifAbsence(System.Boolean)">
+            <summary>
+            Modification d'affichage suivant si on est en cours de modif ou d'ajout d'un absence
+            </summary>
+            <param name="modif"></param>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionAbsence.btnEnregistrer_Click(System.Object,System.EventArgs)">
+            <summary>
+            Demande d'enregistrement de l'ajout ou de la modification d'un absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionAbsence.btnAnnuler_Click(System.Object,System.EventArgs)">
+            <summary>
+            Annule la demande d'ajout ou de modification d'un absence
+            Vide les zones de saisie du absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="F:MediaTek86.view.FormGestionAbsence.components">
             <summary>

@@ -48,5 +48,24 @@ namespace MediaTek86.controller
         {
             return absenceAccess.GetLesAbsencesByIdPersonnel(idpersonnel);
         }
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="absence">objet absence à ajouter</param>
+        public void AddAbsence(Absence absence)
+        {
+            absenceAccess.AddAbsence(absence);
+        }
+
+        /// <summary>
+        /// Demande de modification d'une absence
+        /// </summary>
+        /// <param name="absence">objet absence à modifier</param>
+        /// <param name="ancienneDate">l'ancienne date de l'absence</param>
+        public void UpdateAbsence(Absence absence, DateTime ancienneDate)
+        {
+            absenceAccess.UpdateAbsence(absence, ancienneDate);
+        }
+
     }
 }

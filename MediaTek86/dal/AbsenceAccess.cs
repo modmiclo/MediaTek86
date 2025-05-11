@@ -1,4 +1,5 @@
 ﻿using MediaTek86.model;
+using Org.BouncyCastle.Crypto.Parameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,6 +64,97 @@ namespace MediaTek86.dal
                 }
             }
             return lesAbsences;
+        }
+
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="absence">objet absence à ajouter</param>
+        public void AddAbsence(Absence absence)
+        {
+            if (connexion.Manager != null)
+            {
+                Dictionary<string, object> parameters = CountAbsenceBetweenDate(absence);
+
+                string reqInsert = "insert into absence(idpersonnel, datedebut, datefin, idmotif) ";
+                reqInsert += "values (@idpersonnel, @datedebut, @datefin, @idmotif);";
+                parameters.Add("@idmotif", absence.Motif.IdMotif);
+
+                try
+                {
+                    connexion.Manager.ReqUpdate(reqInsert, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    throw;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Demande de modification d'une absence
+        /// </summary>
+        /// <param name="absence">objet absence à modifier</param>
+        /// <param name="ancienneDate">l'ancienne date de l'absence</param>
+        public void UpdateAbsence(Absence absence, DateTime ancienneDate)
+        {
+            if (connexion.Manager != null)
+            {
+                Dictionary<string, object> parameters = CountAbsenceBetweenDate(absence, ancienneDate);
+
+                string req = "update absence set datedebut = @datedebut, datefin = @datefin, idmotif = @idmotif ";
+                req += "where idpersonnel = @idpersonnel and datedebut = @ancienneDate;";
+                parameters.Add("@idmotif", absence.Motif.IdMotif);
+                try
+                {
+                    connexion.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    throw;
+                }
+            }
+        }
+
+        private Dictionary<string, object> CountAbsenceBetweenDate(Absence absence, DateTime? ancienneDateDebut = null)
+        {
+            string reqCheck = "select count(*) from absence ";
+            reqCheck += "where idpersonnel = @idpersonnel ";
+            reqCheck += "and not (DATE(@datefin) < DATE(datedebut) or DATE(@datedebut) > DATE(datefin)) ";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", absence.IdPersonnel);
+            parameters.Add("@datedebut", absence.DateDebut.Date);
+            parameters.Add("@datefin", absence.DateFin.Date);
+
+            if (ancienneDateDebut != null)
+            {
+                reqCheck += "and not (idpersonnel = @idpersonnel and datedebut = @ancienneDate);";
+                parameters.Add("@ancienneDate", ancienneDateDebut);
+            }
+
+            try
+            {
+                List<Object[]> result = connexion.Manager.ReqSelect(reqCheck, parameters);
+
+                if (result.Count > 0)
+                {
+                    int count = Convert.ToInt32(result[0][0]);
+                    if (count > 0)
+                    {
+                        throw new InvalidOperationException("Une absence est déjà programmée dans ce créneau !");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+
+            return parameters;
         }
     }
 }

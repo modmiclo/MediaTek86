@@ -71,6 +71,7 @@ namespace MediaTek86.view
             this.btnAddAbsence.TabIndex = 4;
             this.btnAddAbsence.Text = "Ajouter une absence";
             this.btnAddAbsence.UseVisualStyleBackColor = true;
+            this.btnAddAbsence.Click += new System.EventHandler(this.btnAddAbsence_Click);
             // 
             // btnSuppr
             // 
@@ -90,6 +91,7 @@ namespace MediaTek86.view
             this.btnGestPersonnel.TabIndex = 2;
             this.btnGestPersonnel.Text = "Gestion personnel";
             this.btnGestPersonnel.UseVisualStyleBackColor = true;
+            this.btnGestPersonnel.Click += new System.EventHandler(this.btnGestPersonnel_Click);
             // 
             // btnModifier
             // 

@@ -75,6 +75,7 @@ namespace MediaTek86.view
             this.btnAddPersonnel.TabIndex = 4;
             this.btnAddPersonnel.Text = "Ajouter un personnel";
             this.btnAddPersonnel.UseVisualStyleBackColor = true;
+            this.btnAddPersonnel.Click += new System.EventHandler(this.btnAddPersonnel_Click);
             // 
             // btnSuppr
             // 

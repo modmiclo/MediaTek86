@@ -38,8 +38,6 @@ namespace MediaTek86.view
         private void Init()
         {
             controller = new FrmConnexionController();
-            txtId.Text = "admin";
-            txtPwd.Text = "mdp";
         }
 
         /// <summary>

@@ -54,6 +54,7 @@ namespace MediaTek86.view
         private void Init()
         {
             controller = new FrmGestionAbsenceController();
+            grpBoxAddModAbsence.Enabled = false;
             RemplirListeAbsence();
             RemplirListeMotif();
         }
@@ -89,6 +90,7 @@ namespace MediaTek86.view
         {
             if (dgvAbsence.SelectedRows.Count > 0)
             {
+                grpBoxAddModAbsence.Enabled = true;
                 EnCoursDeModifAbsence(true);
                 Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
                 timepickDebut.Value = absence.DateDebut;
@@ -127,7 +129,11 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
-            if (cmbBoxMotif.SelectedIndex != -1)
+            if (timepickDebut.Value > timepickFin.Value)
+            {
+                MessageBox.Show("La date de fin est antérieure à la date de début", "Information");
+            }
+            else if (cmbBoxMotif.SelectedIndex != -1)
             {
                 Motif motif = (Motif)bdgMotifs.List[bdgMotifs.Position];
                 if (enCoursDeModifAbsence)
@@ -140,6 +146,7 @@ namespace MediaTek86.view
                     try
                     {
                         controller.UpdateAbsence(absence, ancienneDate);
+                        grpBoxAddModAbsence.Enabled = false;
                     }
                     catch (InvalidOperationException ex)
                     {
@@ -161,10 +168,6 @@ namespace MediaTek86.view
                 RemplirListeAbsence();
                 EnCoursDeModifAbsence(false);
             }
-            else if (timepickDebut.Value > timepickFin.Value)
-            {
-                MessageBox.Show("La date de fin est antérieure à la date de début", "Information");
-            }
             else
             {
                 MessageBox.Show("Tous les champs ne sont pas remplis", "Information");
@@ -182,6 +185,7 @@ namespace MediaTek86.view
             if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 EnCoursDeModifAbsence(false);
+                grpBoxAddModAbsence.Enabled = false;
             }
         }
 
@@ -205,6 +209,17 @@ namespace MediaTek86.view
             {
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
+        }
+
+        private void btnAddAbsence_Click(object sender, EventArgs e)
+        {
+            grpBoxAddModAbsence.Enabled = true;
+            EnCoursDeModifAbsence(false);
+        }
+
+        private void btnGestPersonnel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

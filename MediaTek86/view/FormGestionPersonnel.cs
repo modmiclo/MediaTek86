@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
 namespace MediaTek86.view
 {
@@ -46,6 +47,7 @@ namespace MediaTek86.view
         private void Init()
         {
             controller = new FrmGestionPersonnelController();
+            grpBoxAddModPersonnel.Enabled = false;
             RemplirListePersonnel();
             RemplirListeService();
         }
@@ -81,6 +83,7 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void btnModifier_Click(object sender, EventArgs e)
         {
+            grpBoxAddModPersonnel.Enabled = true;
             if (dgvPersonnel.SelectedRows.Count > 0)
             {
                 EnCoursDeModifPersonnel(true);
@@ -129,6 +132,8 @@ namespace MediaTek86.view
         {
             if (!txtBoxNom.Text.Equals("") && !txtBoxPrenom.Text.Equals("") && !txtBoxTel.Text.Equals("") && !txtBoxMail.Text.Equals("") && cmbBoxService.SelectedIndex != -1)
             {
+                if (MessageBox.Show("Voulez-vous vraiment enregistrer ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
                 Service profil = (Service)bdgServices.List[bdgServices.Position];
                 if (enCoursDeModifPersonnel)
                 {
@@ -147,6 +152,9 @@ namespace MediaTek86.view
                 }
                 RemplirListePersonnel();
                 EnCoursDeModifPersonnel(false);
+                grpBoxAddModPersonnel.Enabled = false;
+
+                }
             }
             else
             {
@@ -166,6 +174,7 @@ namespace MediaTek86.view
             if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 EnCoursDeModifPersonnel(false);
+                grpBoxAddModPersonnel.Enabled = false;
             }
         }
 
@@ -211,6 +220,12 @@ namespace MediaTek86.view
             {
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
+        }
+
+        private void btnAddPersonnel_Click(object sender, EventArgs e)
+        {
+            grpBoxAddModPersonnel.Enabled = true;
+            EnCoursDeModifPersonnel(false);
         }
     }
 }

@@ -16,7 +16,13 @@
             this.Libelle = libelle;
         }
 
+        /// <summary>
+        /// Obtient l'identifiant du motif
+        /// </summary>
         public int IdMotif { get; }
+        /// <summary>
+        /// Obtient ou définit le libellé du motif 
+        /// </summary>
         public string Libelle { get; set; }
 
         /// <summary>

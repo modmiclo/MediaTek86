@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace MediaTek86.view
 {
+    /// <summary>
+    /// Fenêtre permettant la gestion des absences
+    /// </summary>
     public partial class FormGestionAbsence : Form
     {
 
@@ -82,7 +85,7 @@ namespace MediaTek86.view
         }
 
         /// <summary>
-        ///  Demande de modification d'un absence
+        ///  Demande de modification d'une absence
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -105,7 +108,7 @@ namespace MediaTek86.view
         }
 
         /// <summary>
-        /// Modification d'affichage suivant si on est en cours de modif ou d'ajout d'un absence
+        /// Modification d'affichage suivant si on est en cours de modif ou d'ajout d'une absence
         /// </summary>
         /// <param name="modif"></param>
         private void EnCoursDeModifAbsence(Boolean modif)
@@ -123,7 +126,7 @@ namespace MediaTek86.view
         }
 
         /// <summary>
-        /// Demande d'enregistrement de l'ajout ou de la modification d'un absence
+        /// Demande d'enregistrement de l'ajout ou de la modification d'une absence
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -175,8 +178,7 @@ namespace MediaTek86.view
         }
 
         /// <summary>
-        /// Annule la demande d'ajout ou de modification d'un absence
-        /// Vide les zones de saisie du absence
+        /// Annule la demande d'ajout ou de modification d'une absence
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -210,13 +212,22 @@ namespace MediaTek86.view
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
-
+        /// <summary>
+        /// Active le groupe de saisie pour l'ajout d'une absence et désactive l'affichage permettant d'autres manipulations sur les absences
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddAbsence_Click(object sender, EventArgs e)
         {
             grpBoxAddModAbsence.Enabled = true;
             EnCoursDeModifAbsence(false);
         }
 
+        /// <summary>
+        /// Fermeture de la fenêtre gestion absence pour revenir sur la fenêtre de gestion du personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGestPersonnel_Click(object sender, EventArgs e)
         {
             this.Close();

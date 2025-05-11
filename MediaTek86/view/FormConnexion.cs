@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace MediaTek86.view
 {
     /// <summary>
-    /// Fenêtre d'authentification (seuls les developpeurs profil "admin" peuvent accéder à l'application)
+    /// Fenêtre d'authentification (seuls un utilisateur existant dans la table "responsable" peut accéder à l'application)
     /// </summary>
     public partial class FormConnexion : Form
     {

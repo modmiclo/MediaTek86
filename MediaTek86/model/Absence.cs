@@ -22,9 +22,21 @@ namespace MediaTek86.model
             this.Motif = motif;
         }
 
+        /// <summary>
+        /// Obtient l'identifiant du personnel absent 
+        /// </summary>
         public int IdPersonnel { get; }
+        /// <summary>
+        /// Obtient ou définit la date de début de l'absence
+        /// </summary>
         public DateTime DateDebut { get; set; }
+        /// <summary>
+        /// Obtient ou définit la date de fin de l'absence
+        /// </summary>
         public DateTime DateFin { get; set; }
+        /// <summary>
+        /// Obtient ou définit le motif de l'absence
+        /// </summary>
         public Motif Motif { get; set; }
     }
 }

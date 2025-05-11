@@ -24,11 +24,29 @@
             this.Service = service;
         }
 
+        /// <summary>
+        /// Obtient l'identifiant du personnel
+        /// </summary>
         public int IdPersonnel { get; }
+        /// <summary>
+        /// Obtient ou définit le nom du personnel
+        /// </summary>
         public string Nom { get; set; }
+        /// <summary>
+        /// Obtient ou définit le prénom du personnel
+        /// </summary>
         public string Prenom { get; set; }
+        /// <summary>
+        /// Obtient ou définit le téléphone du personnel
+        /// </summary>
         public string Tel { get; set; }
+        /// <summary>
+        /// Obtient ou définit le mail du personnel
+        /// </summary>
         public string Mail { get; set; }
+        /// <summary>
+        /// Obtient ou définit le service du personnel
+        /// </summary>
         public Service Service { get; set; }
     }
 }

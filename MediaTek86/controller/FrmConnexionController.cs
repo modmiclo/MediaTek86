@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.controller
 {
-    class FrmConnexionController
+    /// <summary>
+    /// Contrôleur de FormConnexion
+    /// </summary>
+    public class FrmConnexionController
     {
         /// <summary>
-        /// objet d'accès aux opérations possibles sur Developpeur
+        /// objet d'accès aux opérations possibles sur les responsables
         /// </summary>
         private readonly ResponsableAccess responsableAccess;
 

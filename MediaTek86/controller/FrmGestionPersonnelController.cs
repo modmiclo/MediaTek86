@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MediaTek86.controller
 {
     /// <summary>
-    /// Contrôleur de FrmGestionAbsence et FrmGestionPersonnel
+    /// Contrôleur de FormGestionPersonnel
     /// </summary>
     public class FrmGestionPersonnelController
     {
@@ -42,6 +42,10 @@ namespace MediaTek86.controller
             return personnelAccess.GetLePersonnel();
         }
 
+        /// <summary>
+        /// Récupère et retourne les infos des services
+        /// </summary>
+        /// <returns>liste des services</returns>
         public List<Service> GetLesServices()
         {
             return servicesAccess.GetLesServices();
@@ -50,7 +54,7 @@ namespace MediaTek86.controller
         /// <summary>
         /// Demande d'ajout d'un personnel
         /// </summary>
-        /// <param name="personnel">objet developpeur à ajouter</param>
+        /// <param name="personnel">objet personnel à ajouter</param>
         public void AddPersonnel(Personnel personnel)
         {
             personnelAccess.AddPersonnel(personnel);
@@ -59,7 +63,7 @@ namespace MediaTek86.controller
         /// <summary>
         /// Demande de modification d'un personnel
         /// </summary>
-        /// <param name="personnel">objet developpeur à modifier</param>
+        /// <param name="personnel">objet personnel à modifier</param>
         public void UpdatePersonnel(Personnel personnel)
         {
             personnelAccess.UpdatePersonnel(personnel);

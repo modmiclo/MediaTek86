@@ -26,13 +26,12 @@ namespace MediaTek86.dal
                 connexion = Connexion.GetInstance();
             }
 
-            /// <summary>
-            /// Controle si l'utillisateur a le droit de se connecter (login, pwd)
-            /// </summary>
-            /// <param name="login"></param>
-            /// <param name="pwd"></param>
-            /// <returns>vrai si l'utilisateur a le profil "admin"</returns>
-            public Boolean ControleAuthentification(Responsable responsable)
+        /// <summary>
+        /// Controle si l'utillisateur a le droit de se connecter (login, pwd)
+        /// </summary>
+        /// <param name="responsable"></param>
+        /// <returns>Vrai si un utilisateur correspondant existe dans la table "responsable", sinon faux.</returns>
+        public Boolean ControleAuthentification(Responsable responsable)
             {
                 if (connexion.Manager != null)
                 {

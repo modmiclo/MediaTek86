@@ -65,7 +65,7 @@ namespace MediaTek86.dal
 
 
         /// <summary>
-        /// Demande d'ajout un développeur
+        /// Demande d'ajout d'un personnel
         /// </summary>
         /// <param name="personnel">objet personnel à ajouter</param>
         public void AddPersonnel(Personnel personnel)
@@ -93,7 +93,7 @@ namespace MediaTek86.dal
         }
 
         /// <summary>
-        /// Demande de modification d'un développeur
+        /// Demande de modification d'un personnel
         /// </summary>
         /// <param name="personnel">objet personnel à modifier</param>
         public void UpdatePersonnel(Personnel personnel)

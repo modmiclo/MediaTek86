@@ -1,7 +1,7 @@
 ﻿namespace MediaTek86.model
 {
     /// <summary>
-    /// Classe métier interne pour mémoriser les informations sur les services présentés dans le contexte
+    /// Classe métier interne pour mémoriser les informations sur les services
     /// </summary>
     public class Service
     {
@@ -16,9 +16,14 @@
             this.Nom = nom;
         }
 
+        /// <summary>
+        /// Obtient l'identifiant du service
+        /// </summary>
         public int IdService { get; }
+        /// <summary>
+        /// Obtient ou définit le nom du service
+        /// </summary>
         public string Nom { get; set; }
-
         /// <summary>
         /// Définit l'information à afficher (juste le nom)
         /// </summary>

@@ -13,6 +13,9 @@ using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
 namespace MediaTek86.view
 {
+    /// <summary>
+    /// Fenêtre permettant la gestion du personnel
+    /// </summary>
     public partial class FormGestionPersonnel : Form
     {
         /// <summary>
@@ -221,7 +224,11 @@ namespace MediaTek86.view
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
-
+        /// <summary>
+        /// Active le groupe de saisie pour l'ajout d'un personnel et désactive l'affichage permettant d'autres manipulations sur les autres membres du personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddPersonnel_Click(object sender, EventArgs e)
         {
             grpBoxAddModPersonnel.Enabled = true;

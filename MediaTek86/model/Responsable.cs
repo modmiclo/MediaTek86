@@ -15,8 +15,13 @@
             this.Login = login;
             this.Pwd = pwd;
         }
-
+        /// <summary>
+        /// Obtient le login du responsable
+        /// </summary>
         public string Login { get; }
+        /// <summary>
+        /// Obtient le mot de passe du responsable
+        /// </summary>
         public string Pwd { get; }
     }
 }

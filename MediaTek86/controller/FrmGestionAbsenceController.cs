@@ -1,15 +1,13 @@
 ﻿using MediaTek86.model;
 using MediaTek86.dal;
-using MediaTek86.dal;
-using MediaTek86.model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediaTek86.controller
 {
+    /// <summary>
+    /// Contrôleur de FormGestionAbsence
+    /// </summary>
     public class FrmGestionAbsenceController
     {
         /// <summary>

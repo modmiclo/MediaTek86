@@ -119,6 +119,12 @@ namespace MediaTek86.dal
             }
         }
 
+        /// <summary>
+        /// Vérifie s’il existe une absence déjà enregistrée pour le personnel donné dont la période chevauche celle d’une absence
+        /// </summary>
+        /// <param name="absence">L'objet contenant les informations de la nouvelle absence.</param>
+        /// <param name="ancienneDateDebut"> Optionnel, la date de début de l'ancienne absence </param>
+        /// <returns> Un dictionnaire contenant les paramètres SQL utilisés dans la requête </returns>
         private Dictionary<string, object> CountAbsenceBetweenDate(Absence absence, DateTime? ancienneDateDebut = null)
         {
             string reqCheck = "select count(*) from absence ";

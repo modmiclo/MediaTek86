@@ -67,5 +67,13 @@ namespace MediaTek86.controller
             absenceAccess.UpdateAbsence(absence, ancienneDate);
         }
 
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="absence">objet absence à supprimer</param>
+        public void DelAbsence(Absence absence)
+        {
+            absenceAccess.DelAbsence(absence);
+        }
     }
 }

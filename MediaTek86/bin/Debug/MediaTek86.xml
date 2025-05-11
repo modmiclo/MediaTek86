@@ -104,6 +104,12 @@
             <param name="absence">objet absence à modifier</param>
             <param name="ancienneDate">l'ancienne date de l'absence</param>
         </member>
+        <member name="M:MediaTek86.controller.FrmGestionAbsenceController.DelAbsence(MediaTek86.model.Absence)">
+            <summary>
+            Demande de suppression d'une absence
+            </summary>
+            <param name="absence">objet absence à supprimer</param>
+        </member>
         <member name="T:MediaTek86.controller.FrmGestionPersonnelController">
             <summary>
             Contrôleur de FrmGestionAbsence et FrmGestionPersonnel
@@ -181,6 +187,12 @@
             </summary>
             <param name="absence">objet absence à modifier</param>
             <param name="ancienneDate">l'ancienne date de l'absence</param>
+        </member>
+        <member name="M:MediaTek86.dal.AbsenceAccess.DelAbsence(MediaTek86.model.Absence)">
+            <summary>
+            Demande de suppression d'une absence
+            </summary>
+            <param name="absence">objet absence à supprimer</param>
         </member>
         <member name="T:MediaTek86.dal.Connexion">
             <summary>
@@ -516,6 +528,13 @@
             <summary>
             Annule la demande d'ajout ou de modification d'un absence
             Vide les zones de saisie du absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MediaTek86.view.FormGestionAbsence.btnSuppr_Click(System.Object,System.EventArgs)">
+            <summary>
+            Demande de suppression d'une absence
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

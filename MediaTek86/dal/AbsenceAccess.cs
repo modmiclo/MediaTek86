@@ -156,5 +156,32 @@ namespace MediaTek86.dal
 
             return parameters;
         }
+
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="absence">objet absence à supprimer</param>
+        public void DelAbsence(Absence absence)
+        {
+            if (connexion.Manager != null)
+            {
+                string req = "delete from absence where idpersonnel = @idpersonnel AND datedebut = @datedebut AND datefin = @datefin;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@idpersonnel", absence.IdPersonnel);
+                parameters.Add("@datedebut", absence.DateDebut);
+                parameters.Add("@datefin", absence.DateFin);
+
+                try
+                {
+                    connexion.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
     }
 }
